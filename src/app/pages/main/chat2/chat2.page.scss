@@ -1,0 +1,109 @@
+.contenedorMensajes{
+    margin: 5px;
+        height: 85%;
+        color: aliceblue;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        justify-content: space-between
+    }
+    
+    .custom-input{
+        margin: 0 15px 0 15px;
+    }
+    
+    
+    
+    .wrapper {
+        position: relative;
+        width: 1000px;
+        height: 520px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        display: flex;
+        transition: height 0.2s ease;
+        
+        top: 35px;
+    }
+    
+    .transparente{
+        background: transparent;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+       
+    }
+    
+    .otraclase::-webkit-scrollbar{
+        display: none;
+    }
+    
+    .otraclase{
+        overflow: auto;
+    }
+    
+    .contenidoMensajes{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        
+        background: transparent;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        margin: 5px;
+        padding: 4px;   
+        width: 150px;
+        height: auto;
+       border-radius: 10px;
+    }
+    
+    p{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .flex{
+        display: flex;
+    }
+    
+    .rounded-br-none{
+        border-bottom-right-radius:  0px;
+    }
+    .rounded-bl-none{
+        border-bottom-left-radius: 0px;
+    }
+    
+    .flex-row-reverse{
+        justify-content: end;
+    }
+    
+    
+    .validators{
+        margin: 5px;
+        font-size: 15px;
+        color: aliceblue;
+    }
+
+    .cuartob , #chatb {
+        --background: #52fa94;
+        background-color: #52fa94;
+    }
+    app-header{
+
+        --background: #52fa94;
+        --color :black
+    }
+    ion-toolbar{
+
+        --background: #52fa94;
+        --color :black
+    }
+
+    .redondo{
+        border-radius: 100%;
+    }
+
+    .letraChica{
+        font-size: 13px;
+    }

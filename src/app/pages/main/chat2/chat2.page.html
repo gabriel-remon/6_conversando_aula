@@ -1,0 +1,54 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>
+      <strong>char 4°B</strong>
+      <div class="admin letraChica">CONVERSANDO</div>
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="contenedorMensajes" id="contenedorMensajes">
+
+
+		<div *ngFor="let chat of chatsFirebase" class="mensajeSelec">
+			<div class="flex"
+			[ngClass]="{'flex-row-reverse':chat._uid==userStorage.uid}">
+				<div class= " contenidoMensajes" 
+				[ngClass]="{'rounded-br-none':chat._uid==userStorage.uid,'rounded-bl-none':chat._uid!=userStorage.uid}"
+				>
+					<p *ngIf="chat._uid!=userStorage.uid">{{chat.name}}</p>
+					<small >
+						{{chat.mensaje}}
+					</small>
+					<p></p>
+					<small >{{chat.fecha}}</small>
+				</div>
+			</div>
+		</div>
+
+  </div>
+
+
+<form [formGroup]="form" (submit)="enviarMensaje()">
+	<div class="validators" *ngIf="form.controls.mensaje.errors && form.controls.mensaje.touched">
+		<div *ngIf="form.controls.mensaje.errors?.['maxlength']"> El mensaje no puede tener mas de 22 caracteres</div> 
+	</div>
+
+  <ion-item class="custom-input inputChat">
+    <ion-input type="text" autocomplete="Escriba su mensaje..." label-placement="floating" [formControl]="form.controls.mensaje"  ></ion-input>
+
+    <ion-button type="submit" slot="end" fill="clear"  class="cuartob redondo" shape="round" [disabled]="form.invalid">
+      <ion-icon slot="icon-only" name="paper-plane" class="cuartob"></ion-icon>
+    </ion-button>
+  </ion-item>
+</form>
+
+</ion-content>

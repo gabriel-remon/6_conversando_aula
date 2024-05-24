@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { FirebaeService } from 'src/app/services/firebae.service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-main',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.page.scss'],
 })
 export class MainPage implements OnInit {
-
-  constructor() { }
+  firebaseSvc = inject(FirebaeService)
+  utilSvc = inject(UtilsService)
 
   ngOnInit() {
+  }
+
+
+  singOut(){
+    this.firebaseSvc.sigOut()
   }
 
 }

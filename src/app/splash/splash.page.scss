@@ -1,58 +1,84 @@
 ion-content {
-    --background: black;
+  --background: #343434;
 }
 
 .conteiner{
-    color: rgb(44, 135, 196);
+    color: #3ae8f5;
     font-style: italic;
     h1{
-        margin-top: 60%;
+        margin-top: 0;
         opacity: 1;
-        animation: slideBotom 1.5s ease forwards;
+        animation: spaceOutDown 1.5s ease forwards;
         animation-delay: 2s;
     }
     img{
+        margin-top: 50%;
         height: 150px;
-        animation: zoom 2s ease forwards;
+        animation: holeOut 2s ease forwards;
         animation-delay: 3s;
     }
     h2{
         opacity: 1;
-        animation: slideTop 1.5s ease forwards;
+        animation: spaceOutUp 1.5s ease forwards;
+        animation-delay: 2s;
+    }
+    h3{
+        opacity: 1;
+        animation: spaceOutUp 1.5s ease forwards;
         animation-delay: 2s;
     }
     
 }
 
-@keyframes slideTop{
+@keyframes holeOut {
     0% {
-        transform: translateY(0);
-        opacity: 1;
+      opacity: 1;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: scale(1, 1) rotateY(0deg);
+      transform: scale(1, 1) rotateY(0deg);
     }
+  
     100% {
-        transform: translateY(200px);
-        opacity: 0;
+      opacity: 0;
+      -webkit-transform-origin: 50% 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform: scale(0, 0) rotateY(180deg);
+      transform: scale(0, 0) rotateY(180deg);
     }
-}
-
-@keyframes slideBotom{
+  }
+  
+@keyframes spaceOutUp {
     0% {
-        transform: translateY(0);
-        opacity: 1;
+      opacity: 1;
+      -webkit-transform-origin: 50% 0%;
+      transform-origin: 50% 0%;
+      -webkit-transform: scale(1) translate(0%, 0%);
+      transform: scale(1) translate(0%, 0%);
     }
+  
     100% {
-        transform: translateY(-200px);
-        opacity: 0;
+      opacity: 0;
+      -webkit-transform-origin: 50% 0%;
+      transform-origin: 50% 0%;
+      -webkit-transform: scale(0.2) translate(0%, -200%);
+      transform: scale(0.2) translate(0%, -200%);
     }
-}
-@keyframes zoom{
+  }
+  @keyframes spaceOutDown {
     0% {
-        transform: scale(1);
-        opacity: 0;
+      opacity: 1;
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      -webkit-transform: scale(1) translate(0%, 0%);
+      transform: scale(1) translate(0%, 0%);
     }
+  
     100% {
-        transform: scale(8);
-        opacity: 1;
+      opacity: 0;
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      -webkit-transform: scale(0.2) translate(0%, 200%);
+      transform: scale(0.2) translate(0%, 200%);
     }
-}
-
+  }

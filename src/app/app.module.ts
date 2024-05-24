@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 // firebase
 import {AngularFireModule} from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
+import { provideFirestore } from '@angular/fire/firestore';
 
 
 

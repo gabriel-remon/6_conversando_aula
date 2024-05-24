@@ -1,13 +1,11 @@
-<app-header titulo="login"></app-header>
+<app-header></app-header>
 <ion-content>
 
 
     <div class="d-flex-center">
 
-        <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
+        <form [formGroup]="form" class="reducirTop auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
             
-            <app-logo></app-logo>
-
             <app-custom-input 
             icon="mail-outline" 
             label="correo" 
@@ -16,7 +14,7 @@
             [control]="form.controls.email"
             ></app-custom-input>
             
-            <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
+            <div class="validators fondo-celeste" *ngIf="form.controls.email.errors && form.controls.email.touched">
                 <div *ngIf="form.controls.email.errors?.['required']"> email requerido</div>
                 <div *ngIf="form.controls.email.errors?.['email']"> email invalido</div>
             </div>
@@ -29,14 +27,14 @@
             [control]="form.controls.password"
             ></app-custom-input>
     
-            <div class="validators" *ngIf="form.controls.password.errors && form.controls.password.touched">
+            <div class="validators fondo-celeste" *ngIf="form.controls.password.errors && form.controls.password.touched">
                 <div *ngIf="form.controls.password.errors?.['required']"> password requerido</div>
                 <div *ngIf="form.controls.password.errors?.['minlength']"> deve tener al menos 5 caracteres</div> 
             </div>
 
-            <p class="ion-text-end" routerLink="forgot-password"> ¿olvidaste tu contraseña?</p>
+            <p class="ion-text-end fondo-celeste" routerLink="forgot-password"> ¿olvidaste tu contraseña?</p>
 
-            <ion-button  expand="block" mode="ios" type="submit" class="submit" [disabled]="form.invalid">
+            <ion-button  expand="block" mode="ios" type="submit" class="reducirTop submit" [disabled]="form.invalid">
                 Ingresar
                 <ion-icon slot="end" name="log-in-outline"></ion-icon>
             </ion-button>
@@ -49,17 +47,18 @@
         </form>
     </div>
     <div class="d-flex-center">
-        <p >botones de acceso rapido</p>
-    </div>
-    <div class="d-flex-center">
         <ion-button (click)="acceso1()" class="boton-custom">
-            usuario 1
+            acceso 1
           </ion-button>
         <ion-button (click)="acceso2()" class="boton-custom">
-            usuario 2
+            acceso 2
           </ion-button>
         <ion-button (click)="acceso3()" class="boton-custom">
-            usuario 3
+            acceso 3
           </ion-button>
+    </div>
+    <div class="d-flex-center alejar">
+
+        <app-logo></app-logo>
     </div>
 </ion-content>
